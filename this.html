@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is not confused anymore</h1>
+    <script>
+        const myObject = {
+            firstName : "Md",
+            lastName : "Tahsin Amin",
+            getFulName:function(){
+                console.log(this); // kno akta object/ class / method  bitore this use kore
+                // this object represent kore; 
+               return this.firstName+" "+this.lastName;
+            }
+        }
+        //console.log(myObject.getFulName());
+
+        const anotherObject = { 
+            firstName : "ABM",
+            lastName  : "Shifar Emitiuz"
+        }
+        anotherObject.getFulName = myObject.getFulName;
+
+        console.log(anotherObject.getFulName); // console full function 
+ 
+        anotherObject.getFulName(); // about object details
+
+        myObject.getFulName(); 
+        
+        /* this 
+           function ta kar context a run hobe ta holo this value;
+           ata determine hobe .(dot) ar left side ke ase
+      */
+   
+        console.log(myObject.getFulName()); // console the function return value;
+    </script>
+</body>
+</html>
